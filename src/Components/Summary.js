@@ -30,7 +30,7 @@ const fetchDetails = async () =>{
 
 if(sumInfo.length === 0)return console.log("null")
 
-const pattern = (/<(p)\s*class\s*=\s*['\"]\s*align-left\s*['\"]\s*[^<]*<\/\1\s*>/g )
+const pattern = /<(p)\s*class\s*=\s*['\"]\s*align-left\s*['\"]\s*[^<]*<\/\1\s*>/g
 
   return (
     <div className="summaryContainer">
@@ -53,7 +53,7 @@ const pattern = (/<(p)\s*class\s*=\s*['\"]\s*align-left\s*['\"]\s*[^<]*<\/\1\s*>
       <div className= 'summary2'> 
       <h3>About The Movie</h3>
       <p>
-      {sumInfo.summary.replace(pattern ," ")}
+      {sumInfo.summary.replace('<p>'," ").replace('</p>'," ").replace('</b>'," ").replace('<b>'," ")}
 
       </p>
       </div>
