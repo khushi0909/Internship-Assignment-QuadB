@@ -47,7 +47,7 @@ const RegisterForm = (props) => {
 	return (
 		<main>
 			<header>
-				<h1>Please Fill in The Details For Movie: </h1>
+				<h1>Please Fill in The Details For Movie:{propsData.name} </h1>
 			</header>
 			<form className="form"onSubmit={handleSubmit}>
 				<label htmlFor="name">
