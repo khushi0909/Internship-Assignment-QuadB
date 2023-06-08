@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Link} from 'react-router-dom';
+import Star from './Star';
 // import RegisterForm from './RegisterForm';
 
 
@@ -30,7 +31,6 @@ const fetchDetails = async () =>{
 
 if(sumInfo.length === 0)return console.log("null")
 
-const pattern = /<(p)\s*class\s*=\s*['\"]\s*align-left\s*['\"]\s*[^<]*<\/\1\s*>/g
 
   return (
     <div className="summaryContainer">
@@ -38,8 +38,8 @@ const pattern = /<(p)\s*class\s*=\s*['\"]\s*align-left\s*['\"]\s*[^<]*<\/\1\s*>/
         <img class="sumimg" src ={sumInfo.image.medium} alt="banner"/>
 
         <div className="rest">
-          <h2>{sumInfo.name}</h2>
-            <h3>rating : {sumInfo.rating.average}</h3>
+          <h1>{sumInfo.name}</h1>
+            <h3>Rating : {sumInfo.rating.average} <Star/></h3>
             <h3>Genere : {sumInfo.genres}</h3>
           
             <h3>Language : {sumInfo.language}</h3>
@@ -54,7 +54,6 @@ const pattern = /<(p)\s*class\s*=\s*['\"]\s*align-left\s*['\"]\s*[^<]*<\/\1\s*>/
       <h3>About The Movie</h3>
       <p>
       {sumInfo.summary.replace('<p>'," ").replace('</p>'," ").replace('</b>'," ").replace('<b>'," ")}
-
       </p>
       </div>
 
